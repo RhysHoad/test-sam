@@ -1,0 +1,23 @@
+version = 0.1
+[default.pipeline_bootstrap.parameters]
+oidc_provider_url = "https://token.actions.githubusercontent.com"
+oidc_client_id = "sts.amazonaws.com"
+github_org = "RhysHoad"
+github_repo = "test-sam"
+deployment_branch = "main"
+oidc_provider = "github-actions"
+permissions_provider = "OpenID Connect (OIDC)"
+
+[dev-stage.pipeline_bootstrap.parameters]
+pipeline_execution_role = "arn:aws:iam::435779008660:role/aws-sam-cli-managed-dev-stage-PipelineExecutionRole-sbssjiwbESTJ"
+cloudformation_execution_role = "arn:aws:iam::435779008660:role/aws-sam-cli-managed-dev-s-CloudFormationExecutionRo-koeVNRRF8c57"
+artifacts_bucket = "aws-sam-cli-managed-dev-stage-pipe-artifactsbucket-0whaipxlmcbx"
+image_repository = ""
+region = "eu-west-2"
+
+[staging-test-sam.pipeline_bootstrap.parameters]
+pipeline_execution_role = "arn:aws:iam::435779008660:role/aws-sam-cli-managed-staging-t-PipelineExecutionRole-WR9qFzxuN2Vg"
+cloudformation_execution_role = "arn:aws:iam::435779008660:role/aws-sam-cli-managed-stagi-CloudFormationExecutionRo-7c4jnKmkHKBL"
+artifacts_bucket = "aws-sam-cli-managed-staging-test-s-artifactsbucket-mmqwhgohuqzz"
+image_repository = ""
+region = "eu-west-2"
